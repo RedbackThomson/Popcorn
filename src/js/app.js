@@ -79,6 +79,16 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
     }
   })
 
+  .state('main.profile.playlists', {
+    url: '/playlists',
+    views: {
+      'menu-content': {
+        templateUrl: 'templates/profile/playlists/playlists.html',
+        controller: 'ProfilePlaylistsCtrl'
+      }
+    }
+  })
+
   .state('main.movie', {
     url: '/movie/:movieId',
     views: {
@@ -149,22 +159,12 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
     }
   })
 
-  .state('main.playlists.createplaylists', {
-    url: '/createplaylists',
+  .state('main.playlists.followed', {
+    url: '/followed',
     views: {
       'menu-content': {
-        templateUrl: 'templates/playlists/createdplaylists/createplaylists.html',
-        controller: 'CreatePlaylistsCtrl'
-      }
-    }
-  })
-
-  .state('main.playlists.followedplaylists', {
-    url: '/followedplaylists',
-    views: {
-      'menu-content': {
-        templateUrl: 'templates/playlists/followedplaylists/followedplaylists.html',
-        controller: 'FollowedPlaylistsCtrl'
+        templateUrl: 'templates/playlists/followed/followed.html',
+        controller: 'FollowedCtrl'
       }
     }
   })
