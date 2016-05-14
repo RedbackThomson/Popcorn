@@ -1,13 +1,14 @@
 <ion-view view-title="Home">
   <ion-content>
-    <div class="list">
+    <div class="padding">
+      <h3>Recommended for You</h3>
+      <div class="list">
+        <a ng-repeat="movie in movies" ui-sref="main.movie({movieId: movie.imdbId})" class="item item-thumbnail-left">
+          <img ng-src="{{TMDB_POSTER_PATH}}{{movie.poster_path}}">
+          <h2>{{movie.title}}</h2>
+        </a>
 
-      <a ng-repeat="movie in movies" ui-sref="main.movie({movieId: movie.imdbId})" class="item item-thumbnail-left">
-        <img ng-src="{{TMDB_POSTER_PATH}}{{movie.poster_path}}">
-        <h2>{{movie.title}}</h2>
-      </a>
-
+      </div>
     </div>
-
   </ion-content>
 </ion-view>
