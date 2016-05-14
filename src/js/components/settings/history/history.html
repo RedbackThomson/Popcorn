@@ -2,13 +2,16 @@
   <ion-content>
     <div class="list">
 
-    <a class="item item-thumbnail-left" href="#">
-      <img src="cover.jpg">
-      <h2>Pretty Hate Machine</h2>
-      <p>Nine Inch Nails</p>
-    </a>
+      <a ng-repeat="item in items" 
+      href="#/{{item.id}}"
+      class="item item-thumbnail-left">
 
-   
-</div>
+        <img ng-src="{{ item.image }}">
+        <h2>{{ item.album }}</h2>
+        <h4>{{ item.artist }}</h4>
+      </a>
+
+    </div>
+
   </ion-content>
 </ion-view>
