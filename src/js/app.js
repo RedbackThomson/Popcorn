@@ -107,7 +107,7 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
         controller: 'SettingsCtrl'
       }
     }
-  });
+  })
 
   .state('main.settings.history', {
     url: '/history',
@@ -127,7 +127,7 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
         controller: 'NotificationsCtrl'
       }
     }
-  });
+  })
 
   .state('main.settings.privacy', {
     url: '/privacy',
@@ -137,9 +137,9 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
         controller: 'PrivacyCtrl'
       }
     }
-  });
+  })
 
-    .state('main.settings.theme', {
+  .state('main.settings.theme', {
     url: '/theme',
     views: {
       'menu-content': {
