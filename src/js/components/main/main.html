@@ -18,27 +18,27 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close class="item-icon-left" href="#/main/search">
+        <ion-item menu-close class="item-icon-left" ui-sref="main.search">
           <i class="icon ion-ios-search placeholder-icon"></i>
           Search
         </ion-item>
-        <ion-item menu-close class="item-icon-left" href="#/main/home">
+        <ion-item menu-close class="item-icon-left" ui-sref="main.home">
           <i class="icon ion-ios-film-outline"></i>
           Home
         </ion-item>
-        <ion-item menu-close class="item-icon-left" href="#/main/browse">
+        <ion-item menu-close class="item-icon-left" ui-sref="main.browse">
           <i class="icon ion-filing"></i>
           Browse
         </ion-item>
-        <ion-item menu-close class="item-icon-left" href="#/main/profile/{{user.id}}">
+        <ion-item menu-close class="item-icon-left" ui-sref="main.profile({userId: user.id})">
           <i class="icon ion-ios-monitor-outline"></i>
           Profile
         </ion-item>
-        <ion-item menu-close class="item-icon-left" href="#/main/playlists">
+        <ion-item menu-close class="item-icon-left" ui-sref="main.playlists">
           <i class="icon ion-film-marker"></i>
           Bucketlists
         </ion-item>
-        <ion-item menu-close class="item-icon-left" href="#/main/settings">
+        <ion-item menu-close class="item-icon-left" ui-sref="main.settings">
           <i class="icon ion-ios-gear-outline"></i>
           Settings
         </ion-item>
