@@ -87,6 +87,16 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
         controller: 'PlaylistsCtrl'
       }
     }
+  })
+
+  .state('main.settings', {
+    url: '/settings',
+    views: {
+      'menu-content': {
+        templateUrl: 'templates/settings/settings.html',
+        controller: 'SettingsCtrl'
+      }
+    }
   });
 
   // if none of the above states are matched, use this as the fallback
