@@ -36,8 +36,6 @@ function($scope, $rootScope, $state, $stateParams, $omdb, $ionicModal, Reviews) 
     Reviews.submit($stateParams.movieId, review);
     $scope.reviewText = "";
     $scope.modal.hide();
-
-    $state.go($state.current, {}, {reload: true});
   };
 
   /*{
