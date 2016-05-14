@@ -26,7 +26,7 @@ gulp.task('bump', require('gulp-cordova-bump'));
 gulp.task('default', ['sass', 'templates', 'build']);
 
 gulp.task('sass', function(done) {
-  gulp.src('src/scss/ionic.app.scss')
+  gulp.src('src/scss/**/*.scss')
     .pipe(sass())
     .pipe(gulp.dest('./www/dist/css/'))
     .pipe(minifyCss({

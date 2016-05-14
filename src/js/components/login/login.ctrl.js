@@ -19,7 +19,13 @@ function($scope, $rootScope, $state, $firebase, $q) {
       .child(authData.uid)
       .set({
         provider: authData.provider,
-        name: getName(authData)
+        name: authData.facebook.displayName,
+        picture: authData.facebook.profileImageURL
+      });
+
+      firebaseRef.child("users").child(authData.uid).on('value', function(snapshot)
+      {
+        $rootScope.user = snapshot.val();
       });
     }
   });
@@ -28,25 +34,13 @@ function($scope, $rootScope, $state, $firebase, $q) {
     $scope.user = null;
   });
 
-  // find a suitable name based on the meta info given by each provider
-  function getName(authData) {
-    switch(authData.provider) {
-       case 'password':
-         return authData.password.email.replace(/@.*/, '');
-       case 'twitter':
-         return authData.twitter.displayName;
-       case 'facebook':
-         return authData.facebook.displayName;
-    }
-  }
-
   var thirdPartyLogin = function(provider) {
     var deferred = $q.defer();
     // prefer pop-ups, so we don't navigate away from the page
-    firebaseRef.authWithOAuthPopup("facebook", function(error, authData) {
+    firebaseRef.authWithOAuthPopup(provider, function(error, authData) {
       if (error) {
         if (error.code === "TRANSPORT_UNAVAILABLE") {
-          firebaseRef.authWithOAuthRedirect("facebook", function(error, authData) 
+          firebaseRef.authWithOAuthRedirect(provider, function(error, authData) 
           {
             if(error)
               deferred.reject(error);
