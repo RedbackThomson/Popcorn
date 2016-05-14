@@ -17,7 +17,7 @@ var pkg = require('./package.json');
 var paths = {
   sass: ['src/scss/**/*.scss'],
   js: ['src/js/**/*.js'],
-  templates: ['src/templates/**/*.html']
+  templates: ['src/js/**/*.html']
 };
 
 gulp.task('bump', require('gulp-cordova-bump'));
@@ -51,8 +51,8 @@ gulp.task('build', function () {
 });
 
 gulp.task('templates', function(){
-  return gulp.src('src/templates/**/*.html')
-    .pipe(templateCache('templates.js',{module: 'MovieSpotify', root:'templates/'}))
+  return gulp.src('src/js/components/**/*.html')
+    .pipe(templateCache('templates.js', {module: 'MovieSpotify', root:'templates/'}))
     .pipe(gulp.dest('www/dist'));
 });
 
