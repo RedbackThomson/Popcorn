@@ -1,18 +1,27 @@
 <ion-view view-title="Home">
   <ion-content>
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" placeholder="Search" ng-model="searchTerm">
+      </label>
+      <button class="button button-balanced" ng-click="search()">
+        Search
+      </button>
+    </div>
 
-      <div class="list">
+    <div class="list">
 
-        <a ng-repeat="item in items" 
-           href="#/{{item.id}}"
-           class="item item-thumbnail-left">
+      <a ng-repeat="item in items" 
+      href="#/{{item.id}}"
+      class="item item-thumbnail-left">
 
-          <img ng-src="{{ item.image }}">
-          <h2>{{ item.album }}</h2>
-          <h4>{{ item.artist }}</h4>
-        </a>
+        <img ng-src="{{ item.image }}">
+        <h2>{{ item.album }}</h2>
+        <h4>{{ item.artist }}</h4>
+      </a>
 
-      </div>
+    </div>
 
   </ion-content>
 </ion-view>

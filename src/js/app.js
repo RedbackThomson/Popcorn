@@ -1,14 +1,9 @@
-// Ionic Starter App
+'use strict';
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'MovieSpotify' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'MovieSpotify.services' is found in services.js
-// 'MovieSpotify.controllers' is found in controllers.js
 var MovieSpotify = {
   constants: angular.module('MovieSpotify.constants', []),
   controllers: angular.module('MovieSpotify.controllers', ['MovieSpotify.constants']),
-  services: angular.module('MovieSpotify.services', ['MovieSpotify.constants'])
+  services: angular.module('MovieSpotify.services', ['MovieSpotify.constants', 'victorqueiroz.ngOmdb'])
 };
 
 MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.controllers', 'MovieSpotify.services', 'ngCordova', 'firebase'])
@@ -37,18 +32,21 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
     controller: 'LoginCtrl'
   })
 
-  // setup an abstract state for the tabs directive
-  .state('tab', {
-    url: "/tab",
-    abstract: true,
-    templateUrl: "templates/tabs.html"
-  })
-
   .state('main', {
     url: "/main",
     abstract: true,
     templateUrl: "templates/main/main.html",
     controller: 'MainCtrl'
+  })
+
+  .state('main.search', {
+    url: '/search',
+    views: {
+      'menu-content': {
+        templateUrl: 'templates/search/search.html',
+        controller: 'SearchCtrl'
+      }
+    }
   })
 
   .state('main.home', {
@@ -61,41 +59,32 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
     }
   })
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('main.browse', {
+    url: '/browse',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/dash/tab-dash.html',
-        controller: 'DashCtrl'
+      'menu-content': {
+        templateUrl: 'templates/browse/browse.html',
+        controller: 'BrowseCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chats/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chatdetail/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
+  .state('main.profile', {
+    url: '/profile',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/account/tab-account.html',
-        controller: 'AccountCtrl'
+      'menu-content': {
+        templateUrl: 'templates/profile/profile.html',
+        controller: 'ProfileCtrl'
+      }
+    }
+  })
+
+  .state('main.playlists', {
+    url: '/playlists',
+    views: {
+      'menu-content': {
+        templateUrl: 'templates/playlists/playlists.html',
+        controller: 'PlaylistsCtrl'
       }
     }
   });
