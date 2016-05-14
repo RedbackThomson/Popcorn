@@ -80,7 +80,7 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
   })
 
   .state('main.myplaylists', {
-    url: '/playlists',
+    url: '/playlists/:userId',
     views: {
       'menu-content': {
         templateUrl: 'templates/myplaylists/myplaylists.html',

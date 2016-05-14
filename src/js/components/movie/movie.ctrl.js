@@ -53,7 +53,6 @@ function($scope, $rootScope, $state, $stateParams, $omdb, $ionicModal, Reviews, 
   };
 
   $scope.createBucket = function(bucketName) {
-    console.log(bucketName);
     Playlist.new($rootScope.user.id, bucketName);
     $scope.newBucketModal.hide();
   };

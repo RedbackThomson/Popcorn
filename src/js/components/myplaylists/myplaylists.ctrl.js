@@ -1,6 +1,7 @@
 'use strict';
 
 MovieSpotify.controllers.controller('ProfilePlaylistsCtrl', 
-function($scope) {
-
+function($scope, $stateParams, Playlist) {
+  $scope.$stateParams = $stateParams;
+  $scope.buckets = Playlist.all($stateParams.userId);
 });

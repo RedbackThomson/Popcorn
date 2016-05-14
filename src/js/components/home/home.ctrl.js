@@ -3,7 +3,7 @@
 MovieSpotify.controllers.controller('HomeCtrl', 
 function($scope, lubTmdbApi, TMDB_POSTER_PATH) {
   $scope.TMDB_POSTER_PATH = TMDB_POSTER_PATH;
-  
+
   var loadTop = function(genreId) {
     lubTmdbApi["movie"]["nowPlaying"]().then(
     function(result) {
@@ -16,7 +16,6 @@ function($scope, lubTmdbApi, TMDB_POSTER_PATH) {
           movieArray[index].imdbId = movieInfo.data.imdb_id;
         });
       });
-      console.log($scope.movies);
     }, function(result) {
       console.error(result);
     });

@@ -2,16 +2,11 @@
 
   <ion-content>
     <ul class="list">
-    <li class="item">
-       <a class="item" href="#">
-        Mike's favorite chick flicks
-      </a>
-    </li>
-    <li class="item">
-       <a class="item" href="#">
-        Nick's party list
-      </a>
-    </li>
-</ul>
+      <li ng-repeat="bucket in buckets">
+         <a class="item" ui-sref="main.playlist({userId: $stateParams.userId, playlistId: bucket.$id})">
+          {{bucket.name}}
+        </a>
+      </li>
+    </ul>
   </ion-content>
 </ion-view>
