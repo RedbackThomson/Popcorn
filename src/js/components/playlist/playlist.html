@@ -1,10 +1,10 @@
-<ion-view view-title="Bucketlist name here">
+<ion-view view-title="{{name}}">
   <ion-content>
   	<div class="list">
-      <a class="item item-thumbnail-left" href="#">
-        <img src="cover.jpg">
-        <h2>Pretty Hate Machine</h2>
-        <p>Nine Inch Nails</p>
+      <a class="item item-thumbnail-left" href="#" ng-repeat="movie in movies | orderBy:'-Title':true">
+        <img src="{{movie.Poster}}">
+        <h2>{{movie.Title}}</h2>
+        <p>{{movie.Year}}</p>
       </a>
     </div>
   </ion-content>

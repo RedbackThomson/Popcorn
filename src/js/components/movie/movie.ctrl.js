@@ -1,8 +1,9 @@
 'use strict';
 
 MovieSpotify.controllers.controller('MovieCtrl', 
-function($scope, $rootScope, $state, $stateParams, $omdb, $ionicModal, Reviews) {
+function($scope, $rootScope, $state, $stateParams, $omdb, $ionicModal, Reviews, Playlist) {
   $scope.reviewText = "";
+  $scope.added = false;
 
   $omdb.get($stateParams.movieId).then(function(movie) {
     $scope.selection = movie;
@@ -14,12 +15,26 @@ function($scope, $rootScope, $state, $stateParams, $omdb, $ionicModal, Reviews) 
     scope: $scope,
     animation: 'slide-in-up'
   }).then(function(modal) {
-    $scope.modal = modal;
+    $scope.reviewModal = modal;
+  });
+
+  $ionicModal.fromTemplateUrl('templates/movie/add_bucket.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.bucketModal = modal;
+  });
+
+  $ionicModal.fromTemplateUrl('templates/movie/new_bucket.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.newBucketModal = modal;
   });
 
   $scope.createReview = function() {
     if($scope.reviewText.length > 5)
-      $scope.modal.show();
+      $scope.reviewModal.show();
   };
 
   $scope.submitReview = function(recommend) {
@@ -34,6 +49,23 @@ function($scope, $rootScope, $state, $stateParams, $omdb, $ionicModal, Reviews) 
 
     Reviews.submit($stateParams.movieId, review);
     $scope.reviewText = "";
-    $scope.modal.hide();
+    $scope.reviewModal.hide();
+  };
+
+  $scope.createBucket = function(bucketName) {
+    console.log(bucketName);
+    Playlist.new($rootScope.user.id, bucketName);
+    $scope.newBucketModal.hide();
+  };
+
+  $scope.add = function() {
+    $scope.buckets = Playlist.all($rootScope.user.id);
+    $scope.bucketModal.show();
+  };
+
+  $scope.addToBucket = function(bucketId) {
+    var bucket = Playlist.add($rootScope.user.id, bucketId, $stateParams.movieId);
+    $scope.added = true;
+    $scope.bucketModal.hide();
   };
 });

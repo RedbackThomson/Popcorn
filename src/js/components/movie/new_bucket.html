@@ -1,0 +1,15 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">New Bucketlist</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <input type="text" placeholder="Bucket Name" ng-model="newBucketName" ng-submit="createBucket(newBucketName)">
+        <button class="button button-primary" ng-click="createBucket(newBucketName)">
+          Create {{newBucketName}}
+        </button>
+      </label>
+    </div>
+  </ion-content>
+</ion-modal-view>

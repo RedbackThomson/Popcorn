@@ -49,6 +49,17 @@
     </div>
 
     <div class="list card">
+      <div class="item">
+        <button class="button button-full button-positive" ng-click="add()" ng-if="!added">
+          <i class="icon ion-plus-circled"></i> Add to Bucketlist
+        </button>
+        <button class="button button-full button-positive" disabled ng-if="added">
+          <i class="icon ion-checkmark"></i> Added to Bucketlist
+        </button>
+      </div>
+    </div>
+
+    <div class="list card">
       <div class="item item-text-wrap">
         <h2>User Reviews</h2>
       </div>

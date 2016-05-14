@@ -1,7 +1,7 @@
 'use strict';
 
 MovieSpotify.controllers.controller('LoginCtrl', 
-function(FIREBASE_URL, $scope, $rootScope, $state, $firebase, $q) { 
+function(FIREBASE_URL, $scope, $rootScope, $state, $firebase, $q, Playlist) { 
   var firebaseRef = new Firebase(FIREBASE_URL);
   $scope.user = firebaseRef.getAuth();
 
