@@ -70,7 +70,7 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
   })
 
   .state('main.profile', {
-    url: '/profile',
+    url: '/profile/:userId',
     views: {
       'menu-content': {
         templateUrl: 'templates/profile/profile.html',

@@ -1,8 +1,8 @@
 'use strict';
 
 MovieSpotify.controllers.controller('LoginCtrl', 
-function($scope, $rootScope, $state, $firebase, $q) { 
-  var firebaseRef = new Firebase("https://moviespotify.firebaseio.com/");
+function(FIREBASE_URL, $scope, $rootScope, $state, $firebase, $q) { 
+  var firebaseRef = new Firebase(FIREBASE_URL);
   $scope.user = firebaseRef.getAuth();
 
   if($scope.user)
@@ -18,6 +18,7 @@ function($scope, $rootScope, $state, $firebase, $q) {
       .child("users")
       .child(authData.uid)
       .set({
+        id: authData.uid,
         provider: authData.provider,
         name: authData.facebook.displayName,
         picture: authData.facebook.profileImageURL
