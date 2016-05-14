@@ -119,41 +119,41 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
     }
   })
 
-  .state('main.settings.history', {
+  .state('main.history', {
     url: '/history',
     views: {
       'menu-content': {
-        templateUrl: 'templates/settings/history/history.html',
+        templateUrl: 'templates/history/history.html',
         controller: 'HistoryCtrl'
       }
     }
   })
 
-  .state('main.settings.notifications', {
+  .state('main.notifications', {
     url: '/notifications',
     views: {
       'menu-content': {
-        templateUrl: 'templates/settings/notifications/notifications.html',
+        templateUrl: 'templates/notifications/notifications.html',
         controller: 'NotificationsCtrl'
       }
     }
   })
 
-  .state('main.settings.privacy', {
+  .state('main.privacy', {
     url: '/privacy',
     views: {
       'menu-content': {
-        templateUrl: 'templates/settings/privacy/privacy.html',
+        templateUrl: 'templates/privacy/privacy.html',
         controller: 'PrivacyCtrl'
       }
     }
   })
 
-  .state('main.settings.theme', {
+  .state('main.theme', {
     url: '/theme',
     views: {
       'menu-content': {
-        templateUrl: 'templates/settings/theme/theme.html',
+        templateUrl: 'templates/theme/theme.html',
         controller: 'ThemeCtrl'
       }
     }
