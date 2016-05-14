@@ -99,6 +99,45 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
     }
   });
 
+  .state('main.settings.history', {
+    url: '/history',
+    views: {
+      'menu-content': {
+        templateUrl: 'templates/settings/histroy/history.html',
+        controller: 'HistoryCtrl'
+      }
+    }
+  });
+
+  .state('main.settings.notifications', {
+    url: '/notifications',
+    views: {
+      'menu-content': {
+        templateUrl: 'templates/settings/notifications/notifications.html',
+        controller: 'NotificationsCtrl'
+      }
+    }
+  });
+
+  .state('main.settings.privacy', {
+    url: '/privacy',
+    views: {
+      'menu-content': {
+        templateUrl: 'templates/settings/privacy/privacy.html',
+        controller: 'PrivacyCtrl'
+      }
+    }
+  });
+
+    .state('main.settings.theme', {
+    url: '/theme',
+    views: {
+      'menu-content': {
+        templateUrl: 'templates/settings/theme/theme.html',
+        controller: 'ThemeCtrl'
+      }
+    }
+  });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 
