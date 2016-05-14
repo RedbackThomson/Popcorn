@@ -5,7 +5,7 @@ function($scope, $rootScope, $state, $firebase, $q) {
   var firebaseRef = new Firebase("https://moviespotify.firebaseio.com/");
   $scope.user = firebaseRef.getAuth();
 
-  if($scope.user.uid)
+  if($scope.user)
   {
     $state.go("tab.dash");
   }
