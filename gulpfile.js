@@ -52,7 +52,7 @@ gulp.task('build', function () {
 
 gulp.task('templates', function(){
   return gulp.src('src/templates/**/*.html')
-    .pipe(templateCache('templates.js',{module: 'starter', root:'templates/'}))
+    .pipe(templateCache('templates.js',{module: 'MovieSpotify', root:'templates/'}))
     .pipe(gulp.dest('www/dist'));
 });
 

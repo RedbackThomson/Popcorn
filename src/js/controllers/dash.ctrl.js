@@ -1,1 +1,1 @@
-starter.controllers.controller('DashCtrl', function($scope) {});
+MovieSpotify.controllers.controller('DashCtrl', function($scope) {});

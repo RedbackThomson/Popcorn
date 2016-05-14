@@ -7,3 +7,4 @@ plugins/
 www/lib/
 www/dist/
 .DS_STORE
+*.sublime-*
