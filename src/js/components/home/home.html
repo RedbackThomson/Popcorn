@@ -1,0 +1,18 @@
+<ion-view view-title="Home">
+  <ion-content>
+
+      <div class="list">
+
+        <a ng-repeat="item in items" 
+           href="#/{{item.id}}"
+           class="item item-thumbnail-left">
+
+          <img ng-src="{{ item.image }}">
+          <h2>{{ item.album }}</h2>
+          <h4>{{ item.artist }}</h4>
+        </a>
+
+      </div>
+
+  </ion-content>
+</ion-view>

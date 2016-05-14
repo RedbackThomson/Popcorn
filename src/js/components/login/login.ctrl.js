@@ -7,7 +7,7 @@ function($scope, $rootScope, $state, $firebase, $q) {
 
   if($scope.user)
   {
-    $state.go("tab.dash");
+    $state.go("main.home");
   }
 
   firebaseRef.onAuth(function(authData) {
@@ -66,7 +66,7 @@ function($scope, $rootScope, $state, $firebase, $q) {
     var login = thirdPartyLogin(provider);
     $q.when(login).then(
     function(authData) {
-      $state.go("tab.dash");
+      $state.go("main.home");
     }, function(error) {
       console.err("Couldn't log in");
     });
