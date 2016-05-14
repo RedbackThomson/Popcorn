@@ -79,11 +79,11 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
     }
   })
 
-  .state('main.profile.playlists', {
+  .state('main.myplaylists', {
     url: '/playlists',
     views: {
       'menu-content': {
-        templateUrl: 'templates/profile/playlists/playlists.html',
+        templateUrl: 'templates/myplaylists/myplaylists.html',
         controller: 'ProfilePlaylistsCtrl'
       }
     }
