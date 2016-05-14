@@ -5,6 +5,11 @@ function($scope, $rootScope, $state, $firebase, $q) {
   var firebaseRef = new Firebase("https://moviespotify.firebaseio.com/");
   $scope.user = firebaseRef.getAuth();
 
+  if($scope.user.uid)
+  {
+    $state.go("tab.dash");
+  }
+
   firebaseRef.onAuth(function(authData) {
     if (authData) {
       // save the user's profile into the database so we can list users,
