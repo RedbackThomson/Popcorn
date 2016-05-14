@@ -9,7 +9,6 @@ function($scope, $timeout, $omdb) {
   var search = function(searchTerm) {
     $omdb.find(searchTerm, 'movie').then(function (results) {
       $scope.results = results;
-      console.log(results);
     });
   };
 

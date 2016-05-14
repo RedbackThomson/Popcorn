@@ -3,7 +3,7 @@
 var MovieSpotify = {
   constants: angular.module('MovieSpotify.constants', []),
   controllers: angular.module('MovieSpotify.controllers', ['MovieSpotify.constants']),
-  services: angular.module('MovieSpotify.services', ['MovieSpotify.constants', 'victorqueiroz.ngOmdb'])
+  services: angular.module('MovieSpotify.services', ['MovieSpotify.constants'])
 };
 
 MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.controllers', 'MovieSpotify.services', 'ngCordova', 'firebase'])
@@ -113,7 +113,7 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
     url: '/history',
     views: {
       'menu-content': {
-        templateUrl: 'templates/settings/histroy/history.html',
+        templateUrl: 'templates/settings/history/history.html',
         controller: 'HistoryCtrl'
       }
     }

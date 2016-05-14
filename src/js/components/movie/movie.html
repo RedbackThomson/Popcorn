@@ -1,0 +1,69 @@
+<ion-view view-title="{{selection.Title}}">
+  <ion-content>
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="{{selection.Poster}}">
+        <h2>{{selection.Title}}</h2>
+        <p>{{selection.Year}}</p>
+      </div>
+
+      <div class="item row">
+        <div class="col">
+          <h5>IMDB</h5>
+          <p>{{selection.imdbRating}}/10</p>
+        </div>
+        <div class="col">
+          <h5>RT</h5>
+          <p>{{selection.tomatoMeter}}%</p>
+        </div>
+        <div class="col">
+          <h5>MetaScore</h5>
+          <p>{{selection.Metascore}}%</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="list card">
+      <div class="item item-text-wrap">
+        <h3>Plot</h3>
+        <p>{{selection.Plot}}</p>
+      </div>
+    </div>
+
+    <div class="list card">
+      <div class="item">
+        <h2>Watch It!</h2>
+        <div class="row">
+          <div class="col">
+            <p><button class="button button-stable">Prime</button></p>
+          </div>
+          <div class="col">
+            <p><button class="button button-stable">Hulu</button></p>
+          </div>
+          <div class="col">
+            <p><button class="button button-stable">Netflix</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list card">
+      <div class="item item-text-wrap">
+        <h2>User Reviews</h2>
+      </div>
+      <div class="list">
+        <a class="item item-icon-left item-text-wrap">
+          <i class="icon ion-happy"></i>
+          Anooj Patel
+          <p>Yeah the movie was pretty dope. What else is dope? Lorem Ipsum! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat lobortis eros quis rhoncus. Suspendisse porta enim vel nisi facilisis, in placerat arcu pellentesque. Donec rhoncus pulvinar tellus et fermentum. Vestibulum eleifend mauris ac leo aliquet semper. Etiam vehicula tempus urna, a convallis elit volutpat vitae. Mauris mattis quis dolor in posuere. Vestibulum mi eros, posuere ac malesuada a, posuere et lorem. Pellentesque sed urna non odio scelerisque pulvinar at scelerisque purus. Nulla justo lectus, cursus nec justo vitae, tincidunt consequat felis. Vestibulum purus risus, viverra pretium neque interdum, tincidunt lacinia arcu. Suspendisse eget dolor lacus. Maecenas sagittis varius tortor, non consectetur nisi sagittis in. Nulla commodo ante eget odio tempor ultricies. Suspendisse in commodo est. Sed sed est tortor. Donec egestas felis euismod risus euismod, eget tincidunt tellus sollicitudin. Morbi aliquam eleifend dui, sit amet elementum arcu cursus dignissim. Suspendisse vehicula erat et sodales gravida. Sed dictum leo in.</p>
+        </a>
+        <a class="item item-icon-left item-text-wrap">
+          <i class="icon ion-sad"></i>
+          Nick Thomson
+          <p>Yeah the movie was pretty dope. What else is dope? Lorem Ipsum! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat lobortis eros quis rhoncus. Suspendisse porta enim vel nisi facilisis, in placerat arcu pellentesque. Donec rhoncus pulvinar tellus et fermentum. Vestibulum eleifend mauris ac leo aliquet semper. Etiam vehicula tempus urna, a convallis elit volutpat vitae. Mauris mattis quis dolor in posuere. Vestibulum mi eros, posuere ac malesuada a, posuere et lorem. Pellentesque sed urna non odio scelerisque pulvinar at scelerisque purus. Nulla justo lectus, cursus nec justo vitae, tincidunt consequat felis. Vestibulum purus risus, viverra pretium neque interdum, tincidunt lacinia arcu. Suspendisse eget dolor lacus. Maecenas sagittis varius tortor, non consectetur nisi sagittis in. Nulla commodo ante eget odio tempor ultricies. Suspendisse in commodo est. Sed sed est tortor. Donec egestas felis euismod risus euismod, eget tincidunt tellus sollicitudin. Morbi aliquam eleifend dui, sit amet elementum arcu cursus dignissim. Suspendisse vehicula erat et sodales gravida. Sed dictum leo in.</p>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
