@@ -1,7 +1,7 @@
 'use strict';
 
 MovieSpotify.controllers.controller('LoginCtrl', 
-function(FIREBASE_URL, $scope, $rootScope, $state, $firebase, $q, Playlist) { 
+function(FIREBASE_URL, $scope, $rootScope, $state, $firebase, $q, Users, Playlist) { 
   var firebaseRef = new Firebase(FIREBASE_URL);
   $scope.user = firebaseRef.getAuth();
 
@@ -11,24 +11,29 @@ function(FIREBASE_URL, $scope, $rootScope, $state, $firebase, $q, Playlist) {
   }
 
   firebaseRef.onAuth(function(authData) {
-    if (authData) {
-      // save the user's profile into the database so we can list users,
-      // use them in Security and Firebase Rules, and show profiles
-      firebaseRef
-      .child("users")
-      .child(authData.uid)
-      .set({
-        id: authData.uid,
-        provider: authData.provider,
-        name: authData.facebook.displayName,
-        picture: authData.facebook.profileImageURL
-      });
+    var user = Users.get(authData.uid).then(function() {
+      if (authData && !user.id) {
+        // save the user's profile into the database so we can list users,
+        // use them in Security and Firebase Rules, and show profiles
+        firebaseRef
+        .child("users")
+        .child(authData.uid)
+        .set({
+          id: authData.uid,
+          provider: authData.provider,
+          name: authData.facebook.displayName,
+          picture: authData.facebook.profileImageURL
+        });
 
-      firebaseRef.child("users").child(authData.uid).on('value', function(snapshot)
-      {
-        $rootScope.user = snapshot.val();
-      });
-    }
+        firebaseRef.child("users").child(authData.uid).on('value', function(snapshot)
+        {
+          $rootScope.user = snapshot.val();
+        });
+      }
+      else{
+        $rootScope.user = user;
+      }
+    });
   });
 
   firebaseRef.offAuth(function() {

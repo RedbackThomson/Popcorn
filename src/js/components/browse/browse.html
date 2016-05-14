@@ -11,7 +11,7 @@
           </select>
         </label>
         <ion-scroll direction="x" class="item wide-item" delegate-handle="genreScroll">
-          <a ng-repeat="movie in genreMovies" href="#">
+          <a ng-repeat="movie in genreMovies" ui-sref="main.movie({movieId: movie.imdbId})">
             <img src="{{movie.posterFullPath}}">
           </a>
         </ion-scroll>

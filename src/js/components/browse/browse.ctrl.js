@@ -20,6 +20,11 @@ function($scope, $ionicScrollDelegate, Genres, lubTmdbApi, TMDB_POSTER_PATH) {
     function(result) {
       $scope.genreMovies = result.data.results;
       angular.forEach($scope.genreMovies, function(movie, index, movies) {
+        lubTmdbApi["movie"]["movie"]({
+          query: movie.id
+        }).then(function(movieInfo) {
+          movies[index].imdbId = movieInfo.data.imdb_id;
+        });
         movies[index].posterFullPath = TMDB_POSTER_PATH + '/' + movie.poster_path;
       });
     }, function(result) {

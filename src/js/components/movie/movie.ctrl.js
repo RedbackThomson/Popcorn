@@ -1,12 +1,13 @@
 'use strict';
 
 MovieSpotify.controllers.controller('MovieCtrl', 
-function($scope, $rootScope, $state, $stateParams, $omdb, $ionicModal, Reviews, Playlist) {
+function($scope, $rootScope, $state, $stateParams, $omdb, $ionicModal, Users, Reviews, Playlist) {
   $scope.reviewText = "";
   $scope.added = false;
 
   $omdb.get($stateParams.movieId).then(function(movie) {
     $scope.selection = movie;
+    Users.setHistory($rootScope.user.id, movie.Title);
   });
 
   $scope.reviews = Reviews.get($stateParams.movieId);
