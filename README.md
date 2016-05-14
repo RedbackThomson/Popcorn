@@ -1,4 +1,4 @@
-# Movie Spotify
+# Popcorn
 ##
 Allowing people to browse movies more easily.
 
@@ -13,7 +13,7 @@ that you have made
 ![Alt text](http://i.imgur.com/MBbtOCJ.png)
 
 ## Make Bucketlists
-Movie Spotify allows you to create unique Bucketlists, or 
+Popcorn allows you to create unique Bucketlists, or 
 lists of movies you chose, whether you enjoyed them, made you laugh
 or thought were just so bad you had to put them together
 
