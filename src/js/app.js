@@ -147,6 +147,36 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
         controller: 'ThemeCtrl'
       }
     }
+  })
+
+  .state('main.playlists.createplaylists', {
+    url: '/createplaylists',
+    views: {
+      'menu-content': {
+        templateUrl: 'templates/playlists/createdplaylists/createplaylists.html',
+        controller: 'CreatePlaylistsCtrl'
+      }
+    }
+  })
+
+  .state('main.playlists.followedplaylists', {
+    url: '/followedplaylists',
+    views: {
+      'menu-content': {
+        templateUrl: 'templates/playlists/followedplaylists/followedplaylists.html',
+        controller: 'FollowedPlaylistsCtrl'
+      }
+    }
+  })
+
+  .state('main.playlists.myplaylists', {
+    url: '/myplaylists',
+    views: {
+      'menu-content': {
+        templateUrl: 'templates/playlists/myplaylists/myplaylists.html',
+        controller: 'MyPlaylistsCtrl'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
