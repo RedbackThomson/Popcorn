@@ -70,7 +70,7 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
   })
 
   .state('main.profile', {
-    url: '/profile',
+    url: '/profile/:userId',
     views: {
       'menu-content': {
         templateUrl: 'templates/profile/profile.html',
@@ -85,6 +85,16 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
       'menu-content': {
         templateUrl: 'templates/playlists/playlists.html',
         controller: 'PlaylistsCtrl'
+      }
+    }
+  })
+
+  .state('main.settings', {
+    url: '/settings',
+    views: {
+      'menu-content': {
+        templateUrl: 'templates/settings/settings.html',
+        controller: 'SettingsCtrl'
       }
     }
   });

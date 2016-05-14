@@ -1,13 +1,7 @@
-<ion-view view-title="{{APP_NAME}}">
+<ion-view view-title="">
   <ion-content class="padding">
-    <h1>Welcome to {{APP_NAME}}</h1>
-    <!-- Buttons -->
+    <h1>{{APP_NAME}}</h1>
+    
     <button class="button button-full button-positive" ng-click="login('facebook')">Login with Facebook</button>
-    <button class="button button-full button-outline button-assertive" ng-click="logout()">Logout</button>
-    <!-- Logged-in user text -->
-    <div class="card">
-      <div class="item item-text-wrap" ng-hide="user">User not logged in</div>
-      <div class="item item-text-wrap" ng-show="user" ng-bind="user.uid"></div>
-    </div>
   </ion-content>
 </ion-view>
