@@ -10,6 +10,7 @@ Browse for your favorite movies and box office releases.
 ## Home recommendations
 Get instant recommendations from your personal movie choices 
 that you have made
+![Alt text](http://i.imgur.com/MBbtOCJ.png)
 
 ## Make Bucketlists
 Movie Spotify allows you to create unique Bucketlists, or 
@@ -28,7 +29,7 @@ opinion on what you thought about it along with unique links to platforms that
 provide you with access to the movie, including Netflix, Hulu and Amazon.
 
 ![Alt text](http://i.imgur.com/WbtZups.png)
-![Alt text](http://i.imgur.com/if9LNGr.png)
+![Alt text](http://i.imgur.com/0bnGe4t.png)
 
 ## Searching
 Search for what you want if you know exactly what you are looking for. We provide you
