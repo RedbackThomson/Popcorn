@@ -43,18 +43,18 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
     abstract: true,
     templateUrl: "templates/tabs.html"
   })
+
   .state('main', {
     url: "/main",
     abstract: true,
-    templateUrl: "templates/main.html",
+    templateUrl: "templates/main/main.html",
     controller: 'MainCtrl'
   })
-  // Each tab has its own nav history stack:
 
   .state('main.home', {
     url: '/home',
     views: {
-      'main-home': {
+      'menu-content': {
         templateUrl: 'templates/home/home.html',
         controller: 'HomeCtrl'
       }
