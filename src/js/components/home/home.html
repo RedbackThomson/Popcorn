@@ -2,13 +2,9 @@
   <ion-content>
     <div class="list">
 
-      <a ng-repeat="item in items" 
-      ui-sref="main.playlist({userId: 'facebook:10154915347913986', playlistId: '-KHkINWzvfKEHeQfeDTD'})"
-      class="item item-thumbnail-left">
-
-        <img ng-src="{{ item.image }}">
-        <h2>{{ item.album }}</h2>
-        <h4>{{ item.artist }}</h4>
+      <a ng-repeat="movie in movies" ui-sref="main.movie({movieId: movie.imdbId})" class="item item-thumbnail-left">
+        <img ng-src="{{TMDB_POSTER_PATH}}{{movie.poster_path}}">
+        <h2>{{movie.title}}</h2>
       </a>
 
     </div>
