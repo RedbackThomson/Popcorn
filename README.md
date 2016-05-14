@@ -26,6 +26,7 @@ We provide you with unique profiles for movies and their ratings. Along with
 ratings from IMDB and Rotten Tomatoes, there is a place for you to leave your own
 opinion on what you thought about it along with unique links to platforms that
 provide you with access to the movie, including Netflix, Hulu and Amazon.
+
 ![Alt text](http://i.imgur.com/WbtZups.png)
 ![Alt text](http://i.imgur.com/if9LNGr.png)
 
