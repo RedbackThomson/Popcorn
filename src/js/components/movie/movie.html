@@ -55,7 +55,7 @@
       <div class="list">
         <div class="item item-icon-left item-text-wrap" ng-repeat="review in reviews | orderBy:'date':true">
           <i class="icon ion-happy" ng-if="review.recommend"></i>
-          <i class="icon ion-said" ng-if="!review.recommend"></i>
+          <i class="icon ion-sad" ng-if="!review.recommend"></i>
           {{review.author}}
           <p>{{review.content}}</p>
         </div>
