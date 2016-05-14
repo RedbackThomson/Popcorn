@@ -2,7 +2,7 @@
 
 var MovieSpotify = {
   constants: angular.module('MovieSpotify.constants', []),
-  controllers: angular.module('MovieSpotify.controllers', ['MovieSpotify.constants']),
+  controllers: angular.module('MovieSpotify.controllers', ['MovieSpotify.constants', 'lub-tmdb-api']),
   services: angular.module('MovieSpotify.services', ['MovieSpotify.constants'])
 };
 

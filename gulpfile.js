@@ -38,7 +38,7 @@ gulp.task('sass', function(done) {
 });
 
 gulp.task('build', function () {
-  return gulp.src('src/js/**/*.js')
+  return gulp.src(['src/js/**/*.js', 'node_modules/lub-tmdb/build/lub-tmdb.min.js'])
         .pipe(sourcemaps.init())
           .pipe(ngAnnotate({
             single_quotes: true

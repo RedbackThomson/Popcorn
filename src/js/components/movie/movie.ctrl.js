@@ -9,7 +9,6 @@ function($scope, $rootScope, $state, $stateParams, $omdb, $ionicModal, Reviews) 
   });
 
   $scope.reviews = Reviews.get($stateParams.movieId);
-  console.log($scope.reviews);
 
   $ionicModal.fromTemplateUrl('templates/movie/rating.html', {
     scope: $scope,
@@ -37,10 +36,4 @@ function($scope, $rootScope, $state, $stateParams, $omdb, $ionicModal, Reviews) 
     $scope.reviewText = "";
     $scope.modal.hide();
   };
-
-  /*{
-    author: "Anooj Patel",
-    content: "Lorem Ipsum",
-    recommend: true
-  }*/
 });
