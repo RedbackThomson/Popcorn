@@ -53,16 +53,20 @@
         <h2>User Reviews</h2>
       </div>
       <div class="list">
-        <a class="item item-icon-left item-text-wrap">
-          <i class="icon ion-happy"></i>
-          Anooj Patel
-          <p>Yeah the movie was pretty dope. What else is dope? Lorem Ipsum! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat lobortis eros quis rhoncus. Suspendisse porta enim vel nisi facilisis, in placerat arcu pellentesque. Donec rhoncus pulvinar tellus et fermentum. Vestibulum eleifend mauris ac leo aliquet semper. Etiam vehicula tempus urna, a convallis elit volutpat vitae. Mauris mattis quis dolor in posuere. Vestibulum mi eros, posuere ac malesuada a, posuere et lorem. Pellentesque sed urna non odio scelerisque pulvinar at scelerisque purus. Nulla justo lectus, cursus nec justo vitae, tincidunt consequat felis. Vestibulum purus risus, viverra pretium neque interdum, tincidunt lacinia arcu. Suspendisse eget dolor lacus. Maecenas sagittis varius tortor, non consectetur nisi sagittis in. Nulla commodo ante eget odio tempor ultricies. Suspendisse in commodo est. Sed sed est tortor. Donec egestas felis euismod risus euismod, eget tincidunt tellus sollicitudin. Morbi aliquam eleifend dui, sit amet elementum arcu cursus dignissim. Suspendisse vehicula erat et sodales gravida. Sed dictum leo in.</p>
-        </a>
-        <a class="item item-icon-left item-text-wrap">
-          <i class="icon ion-sad"></i>
-          Nick Thomson
-          <p>Yeah the movie was pretty dope. What else is dope? Lorem Ipsum! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat lobortis eros quis rhoncus. Suspendisse porta enim vel nisi facilisis, in placerat arcu pellentesque. Donec rhoncus pulvinar tellus et fermentum. Vestibulum eleifend mauris ac leo aliquet semper. Etiam vehicula tempus urna, a convallis elit volutpat vitae. Mauris mattis quis dolor in posuere. Vestibulum mi eros, posuere ac malesuada a, posuere et lorem. Pellentesque sed urna non odio scelerisque pulvinar at scelerisque purus. Nulla justo lectus, cursus nec justo vitae, tincidunt consequat felis. Vestibulum purus risus, viverra pretium neque interdum, tincidunt lacinia arcu. Suspendisse eget dolor lacus. Maecenas sagittis varius tortor, non consectetur nisi sagittis in. Nulla commodo ante eget odio tempor ultricies. Suspendisse in commodo est. Sed sed est tortor. Donec egestas felis euismod risus euismod, eget tincidunt tellus sollicitudin. Morbi aliquam eleifend dui, sit amet elementum arcu cursus dignissim. Suspendisse vehicula erat et sodales gravida. Sed dictum leo in.</p>
-        </a>
+        <div class="item item-icon-left item-text-wrap" ng-repeat="review in reviews | orderBy:'date':true">
+          <i class="icon ion-happy" ng-if="review.recommend"></i>
+          <i class="icon ion-said" ng-if="!review.recommend"></i>
+          {{review.author}}
+          <p>{{review.content}}</p>
+        </div>
+      </div>
+      <div class="item item-input-inset">
+        <div class="row">
+          <label class="item-input-wrapper">
+            <input type="text" placeholder="Your Review" ng-model="$parent.reviewText" ng-submit="createReview()">
+          </label>
+          <button class="button button-balanced button-small icon ion-checkmark" ng-disabled="$parent.reviewText.length < 5" ng-click="createReview()"></button>
+        </div>
       </div>
     </div>
   </ion-content>

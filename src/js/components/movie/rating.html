@@ -1,0 +1,16 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Recommend {{suggestion.Title}}</h1>
+    <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div class="row">
+      <div class="col text-center">
+        <button class="button button-large button-positive icon ion-happy" ng-click="submitReview(true)">
+        </button>
+        <button class="button button-large button-assertive icon ion-sad" ng-click="submitReview(false)">
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>
