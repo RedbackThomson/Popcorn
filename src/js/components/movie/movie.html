@@ -53,11 +53,14 @@
         <h2>User Reviews</h2>
       </div>
       <div class="list">
-        <div class="item item-icon-left item-text-wrap" ng-repeat="review in reviews | orderBy:'date':true">
+        <div class="item item-icon-left item-text-wrap" ng-repeat="review in reviews | orderBy:'date':true" ng-if="reviews.length > 0">
           <i class="icon ion-happy" ng-if="review.recommend"></i>
           <i class="icon ion-sad" ng-if="!review.recommend"></i>
           {{review.author}}
           <p>{{review.content}}</p>
+        </div>
+        <div class="item" ng-if="reviews.length === 0">
+          <h3>Be the first to review {{selection.Title}}!</h3>
         </div>
       </div>
       <div class="item item-input-inset">

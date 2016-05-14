@@ -2,19 +2,14 @@
   <ion-content>
     <div class="row center">
       <ion-scroll>
-
-        <div class="list">
-
-          <label class="item item-input item-select">
-            <div class="input-label">
-              Genres
-            </div>
-            <select ng-model="$parent.$parent.selectedGenre">
-              <option ng-repeat="genre in genres" value="{{genre.$id}}">{{genre.$value}}</option>
-            </select>
-          </label>
-
-        </div>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Genre
+          </div>
+          <select ng-model="$parent.$parent.selectedGenre">
+            <option ng-repeat="genre in genres" value="{{genre.$id}}">{{genre.$value}}</option>
+          </select>
+        </label>
         <ion-scroll direction="x" class="item wide-item" delegate-handle="genreScroll">
           <a ng-repeat="movie in genreMovies" href="#">
             <img src="{{movie.posterFullPath}}">
