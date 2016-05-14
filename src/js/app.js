@@ -117,7 +117,7 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
         controller: 'HistoryCtrl'
       }
     }
-  });
+  })
 
   .state('main.settings.notifications', {
     url: '/notifications',
