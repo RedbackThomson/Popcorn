@@ -8,7 +8,7 @@ Browse for your favorite movies and box office releases.
 ![Alt text](http://i.imgur.com/LLEmjAF.png)
 
 ## Home recommendations
-Get instant recommendations from your personal movie choices 
+Get instant recommendations based on personal movie choices 
 that you have made
 ![Alt text](http://i.imgur.com/MBbtOCJ.png)
 
@@ -33,6 +33,6 @@ provide you with access to the movie, including Netflix, Hulu and Amazon.
 
 ## Searching
 Search for what you want if you know exactly what you are looking for. We provide you
-the oppertunity to search for people as well, whether it's your friends or someone famous,
+the opportunity to search for people as well, whether it's your friends or someone famous,
 you can find their lists and recently viewed history.
 ![Alt text](http://i.imgur.com/0uktVQq.png)
