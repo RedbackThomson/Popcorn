@@ -11,10 +11,10 @@
       </div>
     </div>
 
-    <div class="list card">
+    <div class="list card" ng-if="latestHistory">
       <div class="item">
         <h2>Recently Viewed</h2>
-        <p>{{user.history}}</p>
+        <p>{{latestHistory.Title}}</p>
       </div>
     </div>
 

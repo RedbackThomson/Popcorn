@@ -1,5 +1,5 @@
 {
-  "name": "MovieSpotify",
+  "name": "Popcorn",
   "version": "0.0.1",
   "description": "Allowing people to browse movies more easily",
   "contributors": [
@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/RedbackThomson/MovieSpotify"
+    "url": "https://github.com/RedbackThomson/Popcorn"
   },
   "scripts": {
     "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"

@@ -1,7 +1,7 @@
 'use strict';
 
 MovieSpotify.controllers.controller('PlaylistCtrl', 
-function($scope, $stateParams, $firebaseArray, $omdb, Playlist) {
+function($scope, $stateParams, $firebaseArray, Movie, Playlist) {
   $scope.movies = [];
   $scope.name = "";
 
@@ -9,9 +9,8 @@ function($scope, $stateParams, $firebaseArray, $omdb, Playlist) {
   playlist.on('value', function (snapshot){
     $scope.name = snapshot.val().name;
     angular.forEach(snapshot.val().movies, function(movie) {
-      $omdb.get(movie).then(function(movieInfo) {
+      Movie.get(movie).then(function(movieInfo) {
         $scope.movies.push(movieInfo);
-        console.log(movieInfo);
       });
     });
   });

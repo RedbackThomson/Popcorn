@@ -10,25 +10,29 @@ function(FIREBASE_URL, $scope, $rootScope, $state, $firebase, $q, Users, Playlis
     $state.go("main.home");
   }
 
+  $scope.createNewUser = function(authData) {
+    firebaseRef
+    .child("users")
+    .child(authData.uid)
+    .set({
+      id: authData.uid,
+      provider: authData.provider,
+      name: authData.facebook.displayName,
+      picture: authData.facebook.profileImageURL
+    });
+
+    firebaseRef.child("users").child(authData.uid).on('value', function(snapshot)
+    {
+      $rootScope.user = snapshot.val();
+    });
+  };
+
   firebaseRef.onAuth(function(authData) {
+    if(authData == null || !authData.hasOwnProperty("uid"))
+      return;
     var user = Users.get(authData.uid).then(function() {
       if (authData && !user.id) {
-        // save the user's profile into the database so we can list users,
-        // use them in Security and Firebase Rules, and show profiles
-        firebaseRef
-        .child("users")
-        .child(authData.uid)
-        .set({
-          id: authData.uid,
-          provider: authData.provider,
-          name: authData.facebook.displayName,
-          picture: authData.facebook.profileImageURL
-        });
-
-        firebaseRef.child("users").child(authData.uid).on('value', function(snapshot)
-        {
-          $rootScope.user = snapshot.val();
-        });
+        $scope.createNewUser(authData);
       }
       else{
         $rootScope.user = user;
@@ -37,7 +41,7 @@ function(FIREBASE_URL, $scope, $rootScope, $state, $firebase, $q, Users, Playlis
   });
 
   firebaseRef.offAuth(function() {
-    $scope.user = null;
+    $rootScope.user = null;
   });
 
   var thirdPartyLogin = function(provider) {
@@ -74,6 +78,6 @@ function(FIREBASE_URL, $scope, $rootScope, $state, $firebase, $q, Users, Playlis
 
   $scope.logout = function() {
     firebaseRef.unauth();
-    $scope.user = null;
+    $rootScope.user = null;
   };
 });

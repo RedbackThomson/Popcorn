@@ -11,13 +11,6 @@ function(FIREBASE_URL, $q, $firebaseObject) {
           resolve(snapshot.val());
         });
       });
-    },
-    setHistory: function(userId, movieName) {
-      var user = $firebaseObject(ref.child("users").child(userId));
-      user.$loaded().then(function() {
-        user.history = movieName;
-        user.$save();
-      });
     }
   }
 });

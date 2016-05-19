@@ -4,7 +4,9 @@ MovieSpotify.constants
 
 .constant('APP_NAME', 'Popcorn')
 
-.constant('FIREBASE_URL', "https://moviespotify.firebaseio.com/");
+.constant('FIREBASE_URL', "https://moviespotify.firebaseio.com/")
+
+.constant('HISTORY_LENGTH', 25);
 
 MovieSpotify.controllers
 

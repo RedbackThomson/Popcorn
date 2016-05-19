@@ -1,7 +1,7 @@
 <ion-view view-title="{{name}}">
   <ion-content>
   	<div class="list">
-      <a class="item item-thumbnail-left" href="#" ng-repeat="movie in movies | orderBy:'-Title':true">
+      <a class="item item-thumbnail-left" ui-sref="main.movie({movieId: movie.imdbID})" ng-repeat="movie in movies | orderBy:'-Title':true">
         <img src="{{movie.Poster}}">
         <h2>{{movie.Title}}</h2>
         <p>{{movie.Year}}</p>
