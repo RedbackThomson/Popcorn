@@ -9,7 +9,6 @@ function($scope, $stateParams, Users, History, Movie) {
       return;
 
     var lastMovie = movies[movies.length - 1].$value;
-    console.log(lastMovie);
     Movie.get(lastMovie).then(function(first) {
       $scope.latestHistory = first;
     });

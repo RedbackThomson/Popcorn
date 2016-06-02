@@ -12,10 +12,10 @@
     </div>
 
     <div class="list card" ng-if="latestHistory">
-      <div class="item">
+      <a class="item" ui-sref="main.history({userId: $stateParams.userId})">
         <h2>Recently Viewed</h2>
         <p>{{latestHistory.Title}}</p>
-      </div>
+      </a>
     </div>
 
     <div class="list card">

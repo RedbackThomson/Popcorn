@@ -121,7 +121,7 @@ MovieSpotify.app = angular.module('MovieSpotify', ['ionic', 'MovieSpotify.contro
   })
 
   .state('main.history', {
-    url: '/history',
+    url: '/history/:userId',
     views: {
       'menu-content': {
         templateUrl: 'templates/history/history.html',

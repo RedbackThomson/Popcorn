@@ -1,17 +1,11 @@
 <ion-view view-title="Recent History">
   <ion-content>
     <div class="list">
-
-      <a ng-repeat="item in items" 
-      href="#/{{item.id}}"
-      class="item item-thumbnail-left">
-
-        <img ng-src="{{ item.image }}">
-        <h2>{{ item.album }}</h2>
-        <h4>{{ item.artist }}</h4>
+      <a class="item item-thumbnail-left" ui-sref="main.movie({movieId: movieObj.movie.imdbID})" ng-repeat="movieObj in movies | orderBy:'-key':false">
+        <img src="{{movieObj.movie.Poster}}">
+        <h2>{{movieObj.movie.Title}}</h2>
+        <p>{{movieObj.movie.Year}}</p>
       </a>
-
     </div>
-
   </ion-content>
 </ion-view>
