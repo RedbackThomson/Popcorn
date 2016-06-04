@@ -2,6 +2,8 @@
 ##
 Allowing people to browse movies more easily.
 
+*Created as a submission to UCSD Startup 2016*
+
 ## Browsing
 Browse for your favorite movies and box office releases.
 
